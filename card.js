@@ -7,8 +7,10 @@ class Cards extends HTMLElement{
     }
 
     static get observedAttributes(){
-        // return ['name', "surname"];
+        return ['text', "img", "mainColor"];
     }
+
+    
 
     attributeChangedCallback(nameAttr, oldValue, newValue){
 
@@ -31,6 +33,11 @@ class Cards extends HTMLElement{
             
             </div>
             <link rel="stylesheet" href="card.css">
+            <style>
+                .card-container{
+                    background: linear-gradient(142.34deg,${this.attributes.mainColor.nodeValue} 5.97%, #FFFFFF 100%);
+                }
+            </style>
             <!--!html-->
             `;
     }
